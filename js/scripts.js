@@ -109,27 +109,27 @@ function checkRoundWinner(playerPick, computerPick) {
 		computer.score++;
 	}
 
-	function setGamePoints() {
-		playerPointsElem.innerHTML = player.score;
-		computerPointsElem.innerHTML = computer.score;
-	}
-
-	function checkIfTenPoints() {
-		var title = document.getElementById('js-title');
-		title.style.fontSize = '32px';
-		title.style.textAlign = 'center';
-
-		if (player.score === 10) {
-			gameState = 'ended';
-			setGameElements();
-			title.innerHTML = 'Wygrał gracz ' + player.name + '!'
-		} else if (computer.score === 10) {
-			gameState = 'ended';
-			setGameElements();
-			title.innerHTML = 'Wygrał komputer!'
-		}
-	}
-
 	setGamePoints();
 	checkIfTenPoints();
+}
+
+function setGamePoints() {
+	playerPointsElem.innerHTML = player.score;
+	computerPointsElem.innerHTML = computer.score;
+}
+
+function checkIfTenPoints() {
+	var title = document.getElementById('js-title');
+	title.style.fontSize = '32px';
+	title.style.textAlign = 'center';
+
+	if (player.score === 10) {
+		gameState = 'ended';
+		setGameElements();
+		title.innerHTML = 'Wygrał gracz ' + player.name + '!'
+	} else if (computer.score === 10) {
+		gameState = 'ended';
+		setGameElements();
+		title.innerHTML = 'Wygrał komputer!'
+	}
 }
